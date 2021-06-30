@@ -19,10 +19,7 @@ export default class MainScreen extends React.Component {
 
 const styles = StyleSheet.create({
     listContainer: {
-        backgroundColor: '#F5FDFF',
-        flex: 1,
-        justifyContent: 'flex-start',
-        paddingTop: 10,
-        paddingLeft: 25
+        backgroundColor: '#FFFFFF',
+        alignItems: 'center',
     }
 })

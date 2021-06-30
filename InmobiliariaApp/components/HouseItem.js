@@ -1,38 +1,81 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image, TouchableHighlight} from 'react-native';
+import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
 
-export default function HouseItem({imageUri,name}) {
+import { Icon } from 'react-native-elements'
+
+export default function HouseItem({imageUri,name, address, size, price, bedroom, bathroom}) {
     return(
-        <View style = {styles.imgContainer}>
-            <TouchableHighlight>
-                <View>
-                    <Image source = {imageUri} style = {styles.images}/>
-                    <Text style = {styles.imageText}>
-                        {name}
-                    </Text>
+
+        <View style = {styles.houseContainer}>
+            <View style = {styles.imgContainer}>
+                <Image source = {imageUri} style = {styles.images}/>
+                <Text>RATING</Text>
+            </View>
+            <View style = {styles.infoContainer}>
+                <Text style = {styles.houseName}>{name}</Text>
+                <View style = {styles.address}>
+                    <Icon name = 'place' size = {30} color = "black"/>
+                    <Text style = {styles.addressText}>{address}</Text>   
+                </View> 
+                
+                <View style = {styles.details}>
+                    <Icon name = 'king-bed' size = {30} color = "black"/>
+                    <Text style = {styles.infoText}>{bedroom}</Text>
+                    <Icon name = 'bathtub' size = {30} color = "black"/>
+                    <Text style = {styles.infoText}>{bathroom}</Text>
+                    <Icon name = 'zoom-out-map' size = {30} color = "black"/>
+                    <Text style = {styles.infoText}>{size}</Text>  
                 </View>
-            </TouchableHighlight>
+                <View style = {styles.price}>
+                     <Text style = {{fontSize: 20}}>{price}</Text>  
+                     <Icon name = 'favorite-border' size = {30} color = "black"/>
+                </View>
+            </View>   
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({
-    imgContainer:{
-        width: 140,
-        paddingLeft: 10,
-        marginRight: 15,
-        paddingTop: 15
+    address:{
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    addressText:{
+        fontSize: 15,
+        paddingLeft: 7, 
+    },
+    details:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between' 
     },
     images:{
-        borderRadius: 10,
-        height: 140,
-        resizeMode:'cover',
-        width: '100%'
+        borderRadius: 15,
+        height: 130,
+        width: 130,  
     },
-    imageText:{
-        color: 'white',
+    infoContainer:{
+        paddingLeft: 20,
+    },
+    houseContainer:{ 
+        backgroundColor: '#F5FAFF',  
+        borderRadius: 15,    
+        flexDirection: 'row',
+        margin: 10,
+        padding: 15,
+    },
+    houseName:{
+        color: 'black',
         fontSize: 20,
-        marginTop: 5
+        fontWeight: '700'
+        //fontFamily: 'Poppins-Light'
     },
-
+    infoText: {
+        fontWeight:'bold',
+    },
+    price: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
 });
