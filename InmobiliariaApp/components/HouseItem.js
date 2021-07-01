@@ -1,11 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
-
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
 
 export default function HouseItem({imageUri,name, address, size, price, bedroom, bathroom}) {
     return(
-
         <View style = {styles.houseContainer}>
             <View style = {styles.imgContainer}>
                 <Image source = {imageUri} style = {styles.images}/>
@@ -14,21 +12,21 @@ export default function HouseItem({imageUri,name, address, size, price, bedroom,
             <View style = {styles.infoContainer}>
                 <Text style = {styles.houseName}>{name}</Text>
                 <View style = {styles.address}>
-                    <Icon name = 'place' size = {30} color = "black"/>
+                    <Icon name = 'place' color = "black"/>
                     <Text style = {styles.addressText}>{address}</Text>   
                 </View> 
                 
                 <View style = {styles.details}>
-                    <Icon name = 'king-bed' size = {30} color = "black"/>
+                    <Icon name = 'king-bed' color = "black"/>
                     <Text style = {styles.infoText}>{bedroom}</Text>
-                    <Icon name = 'bathtub' size = {30} color = "black"/>
+                    <Icon name = 'bathtub' color = "black"/>
                     <Text style = {styles.infoText}>{bathroom}</Text>
-                    <Icon name = 'zoom-out-map' size = {30} color = "black"/>
+                    <Icon name = 'zoom-out-map' color = "black"/>
                     <Text style = {styles.infoText}>{size}</Text>  
                 </View>
                 <View style = {styles.price}>
-                     <Text style = {{fontSize: 20}}>{price}</Text>  
-                     <Icon name = 'favorite-border' size = {30} color = "black"/>
+                     <Text style = {styles.priceText}>{price}</Text>  
+                     <Icon name = 'favorite-border' color = "black"/>
                 </View>
             </View>   
         </View>
@@ -51,8 +49,8 @@ const styles = StyleSheet.create({
     },
     images:{
         borderRadius: 15,
-        height: 130,
-        width: 130,  
+        height: 100,
+        width: 100,  
     },
     infoContainer:{
         paddingLeft: 20,
@@ -76,6 +74,11 @@ const styles = StyleSheet.create({
     price: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        fontSize: 15
+    },
+    priceText: {
+        fontSize: 17,
+        fontWeight: '700'
     },
 });

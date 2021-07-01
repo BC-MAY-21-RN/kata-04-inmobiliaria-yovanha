@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, View, SafeAreaView, ScrollView} from 'react-native';
 import VerticalList from '../components/VerticalList';
 import data from '../data';
 

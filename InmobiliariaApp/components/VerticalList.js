@@ -17,8 +17,7 @@ export default function VerticalList({data}) {
                             bathroom={houses.bathroom}
                             size={houses.size}
                             price={houses.price}
-                        />
-                        
+                        />    
                     ))
                 }
             </ScrollView>
