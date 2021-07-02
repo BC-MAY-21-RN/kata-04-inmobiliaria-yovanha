@@ -64,30 +64,30 @@ export default function HouseItem({imageUri,rating, name, address, size, price, 
 
 const styles = StyleSheet.create({
     address:{
-        flexDirection: 'row',
         alignItems: 'center',
+        flexDirection: 'row',
     },
     addressText:{
+        fontFamily: "Poppins-Regular",
         fontSize: 13,
         paddingLeft: 7, 
-        fontFamily: "Poppins-Regular",
     },
     details:{
-        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between' 
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     images:{
         borderRadius: 10,
         height: 110,
+        position: 'absolute',
         width: 110,  
-        position: 'absolute'
     },
     imgContainer:{
         alignItems:'center',
         height: 110,
-        width: 110,
         paddingTop: 75,
+        width: 110,
     },
     infoContainer:{
         paddingLeft: 15,
@@ -111,13 +111,13 @@ const styles = StyleSheet.create({
         fontFamily: "Poppins-SemiBold", 
     },
     price: {
-        flexDirection: 'row',
         alignItems: 'center',
+        flexDirection: 'row',
         justifyContent: 'space-between',  
     },
     priceText: {
+        fontFamily: "Poppins-SemiBold",
         fontSize: 16,
-        fontFamily: "Poppins-SemiBold"
     },
     ratingContainer: {
         alignItems: 'center', 
