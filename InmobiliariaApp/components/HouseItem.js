@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     addressText:{
-        fontSize: 15,
+        fontSize: 13,
         paddingLeft: 7, 
+        fontFamily: "Poppins-Regular",
     },
     details:{
         flexDirection: 'row',
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
         width: 200,
     },
     infoText: {
-        fontWeight:'bold',
+        fontFamily: "Poppins-SemiBold",
     },
     houseContainer:{ 
         backgroundColor: '#F5FDFF',  
@@ -106,19 +107,17 @@ const styles = StyleSheet.create({
     },
     houseName:{
         color: 'black',
-        fontSize: 18,
-        fontWeight: '700',
-        fontFamily: 'Poppins'
+        fontSize: 17,
+        fontFamily: "Poppins-SemiBold", 
     },
     price: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        fontSize: 15
+        justifyContent: 'space-between',  
     },
     priceText: {
-        fontSize: 17,
-        fontWeight: '700'
+        fontSize: 16,
+        fontFamily: "Poppins-SemiBold"
     },
     ratingContainer: {
         alignItems: 'center', 
