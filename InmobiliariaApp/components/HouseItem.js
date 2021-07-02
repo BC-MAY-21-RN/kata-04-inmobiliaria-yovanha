@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text, ImageBackground} from 'react-native';
-import { Rating } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function HouseItem({imageUri,rating, name, address, size, price, bedroom, bathroom}) {
+    const [isSelected, setSelection] = useState(false);
     return(
         <View style = {styles.houseContainer}>
             <View style = {styles.imgContainer}>
@@ -14,7 +14,7 @@ export default function HouseItem({imageUri,rating, name, address, size, price, 
                     name = 'star'
                     color = '#EEBA00'
                     />
-                    <Text> {rating} </Text>
+                    <Text style = {styles.ratingText}> {rating} </Text>
                 </View>
             </View>
     
@@ -50,10 +50,11 @@ export default function HouseItem({imageUri,rating, name, address, size, price, 
                 </View>
                 <View style = {styles.price}>
                      <Text style = {styles.priceText}>{price}</Text>  
-                     <Ionicons 
-                     name = 'heart-circle-sharp' 
-                     size = {25}
-                     color = "#00B074"
+                     <Ionicons
+                        onPress={() => setSelection(!isSelected)}
+                        name={isSelected ? 'md-heart-circle-outline' : 'md-heart-circle'}
+                        size = {27}
+                        color = "#00B074"
                      />
                 </View>
             </View>   
@@ -78,13 +79,13 @@ const styles = StyleSheet.create({
     images:{
         borderRadius: 10,
         height: 110,
-        width: 100,  
+        width: 110,  
         position: 'absolute'
     },
     imgContainer:{
         alignItems:'center',
         height: 110,
-        width: 100,
+        width: 110,
         paddingTop: 75,
     },
     infoContainer:{
@@ -125,5 +126,9 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row',
         padding: 4,
+    },
+    ratingText: {
+        color: '#7A6229',
+        fontWeight: '700',
     },
 });

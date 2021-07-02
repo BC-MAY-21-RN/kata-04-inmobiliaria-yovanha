@@ -5,7 +5,7 @@ import HouseItem from './HouseItem';
 export default function VerticalList({data}) {
     return( 
         <View>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator= {false}>
                 {
                     data.map(houses => (
                         <HouseItem
